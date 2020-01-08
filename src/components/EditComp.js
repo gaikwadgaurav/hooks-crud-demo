@@ -12,6 +12,7 @@ export default memo(({...props}) => {
         email: '',
         password:''
     });
+    setUpdateData(data)
 
 
     function handleSubmit(data) {
@@ -24,9 +25,9 @@ export default memo(({...props}) => {
     function handleChange(e) {
         const newData = {...data};
         newData[e.target.name] = e.target.value;
-        //setData(newData)
+        setUpdateData(newData)
     }
 
-    return <FormU {...{data, handleChange, handleSubmit}}/>
+    return <FormU {...{updateData, handleChange, handleSubmit}}/>
 
 })
