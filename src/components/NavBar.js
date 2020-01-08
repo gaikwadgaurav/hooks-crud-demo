@@ -1,22 +1,22 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 export default function NavBar() {
     return (
-        <>
-            <Nav variant="pills" defaultActiveKey="/home">
-                <Nav.Item>
-                    <Nav.Link componentclass={Link} href="/home" to="/home" eventKey="1">Home</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link componentclass={Link} href="/add" to="/add" eventKey="2">Add</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link componentclass={Link} href="/list" to="/list" eventKey="3" >List</Nav.Link>
-                </Nav.Item>
-            </Nav>
-        </>
+
+        <Nav variant="pills" defaultActiveKey="/list">
+            <Nav.Item>
+                <Link componentclass={Link} href="/home" to="/home" eventkey="1">Home</Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Link componentclass={Link} href="/add" to="/add" eventkey="2">Add</Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Link componentclass={Link} href="/list" to="/list" eventkey="3">List</Link>
+            </Nav.Item>
+        </Nav>
+
     );
 }
 

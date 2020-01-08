@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Home({ data, ...props }) {
+export default function Home() {
     return (
         <div>
-            {console.log('data', data, props)}
+            Home
         </div>
     );
 }
