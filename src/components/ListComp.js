@@ -1,14 +1,16 @@
-import React, {memo, useEffect, useState,} from 'react';
+import React, { memo, useEffect, useState, } from 'react';
 import Axios from "axios";
-import {Button} from "react-bootstrap";
-import {useHistory} from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 
-export default  memo(({props})=> {
+export default memo(({ props }) => {
+
+    //variable
     let history = useHistory();
+
     //Setting url constant
     const getID = "http://192.168.0.158:5000/api/v1/user/list";
-
 
     //Setting State
     const [data, setData] = useState({
@@ -17,7 +19,6 @@ export default  memo(({props})=> {
         email: '',
         password: ''
     });
-
 
     //Fetching the data through Get Method
     useEffect(() => {
@@ -37,17 +38,18 @@ export default  memo(({props})=> {
                 <td>{list.firstName}</td>
                 <td>{list.lastName}</td>
                 <td>{list.email}</td>
-                <td><Button onClick={() => Update(list)} className="btnUpdate" variant="success"/></td>
-                <td><Button onClick={() => remove(list._id)} className="btnDelete" variant="danger"/></td>
+                <td><Button onClick={() => Update(list)} className="btnUpdate" variant="success" /></td>
+                <td><Button onClick={() => remove(list._id)} className="btnDelete" variant="danger" /></td>
             </tr>
         )
     })
 
+    console.log('re')
     function Update(list) {
-        // console.log(list);
-        history.push("/edit", {list})
+        history.push(`/user/edit/id=${list._id}`, { list })
     }
 
+    //Delete User
     const deleteUrl = 'http://192.168.0.158:5000/api/v1/user/';
 
     function remove(id) {
@@ -55,15 +57,14 @@ export default  memo(({props})=> {
         Axios.delete(deleteUrl + id)
             .then(res => {
                 console.log(res)
-                if(res.status===200)
-                {
-                    let cloneData=data
+                if (res.status === 200) {
+                    let cloneData = data.slice()
                     console.log('before', cloneData)
-               const filterIdIndex = cloneData.findIndex(user => user._id === id)
+                    const filterIdIndex = cloneData.findIndex(user => user._id === id)
                     console.log(filterIdIndex)
-                    cloneData.splice(filterIdIndex,1)
+                    cloneData.splice(filterIdIndex, 1)
                     console.log('after', cloneData)
-                setData(cloneData)
+                    setData(cloneData)
                     console.log('before', data
                     )
                 }
@@ -72,22 +73,19 @@ export default  memo(({props})=> {
     }
 
     return (<Table striped bordered hover>
-            <thead>
+        <thead>
             <tr>
-
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Update</th>
                 <th>Delete</th>
-
-
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             {renderTable}
-            </tbody>
-        </Table>
+        </tbody>
+    </Table>
     );
 
 })

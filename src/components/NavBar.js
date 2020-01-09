@@ -10,10 +10,10 @@ export default function NavBar() {
                 <Link componentclass={Link} href="/home" to="/home" eventkey="1">Home</Link>
             </Nav.Item>
             <Nav.Item>
-                <Link componentclass={Link} href="/add" to="/add" eventkey="2">Add</Link>
+                <Link componentclass={Link} href="/user/add" to="/user/add" eventkey="2">Add</Link>
             </Nav.Item>
             <Nav.Item>
-                <Link componentclass={Link} href="/list" to="/list" eventkey="3">List</Link>
+                <Link componentclass={Link} href="/user/list" to="/user/list" eventkey="3">List</Link>
             </Nav.Item>
         </Nav>
 

@@ -12,9 +12,9 @@ export default function RoutingComp() {
             <div>
                 <Route exact path="/" component={Home}></Route>
                 <Route exact path="/home" component={Home}></Route>
-                <Route exact path="/add" component={AddComp}></Route>
-                <Route exact path="/list" component={ListComp}></Route>
-                <Route exact path="/edit" component={EditComp}></Route>
+                <Route exact path="/user/add/" component={AddComp}></Route>
+                <Route exact path="/user/list/" component={ListComp}></Route>
+                <Route exact path="/user/edit/" component={EditComp}></Route>
             </div>
         </Router>
     );

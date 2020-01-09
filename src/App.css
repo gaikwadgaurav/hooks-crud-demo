@@ -26,6 +26,9 @@
 label.form-label {
   text-transform: capitalize;
 }
+.nav-item {
+  padding: 15px;
+}
 .App-link {
   color: #61dafb;
 }
