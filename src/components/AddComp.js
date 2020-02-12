@@ -5,7 +5,7 @@ import Alert from 'react-bootstrap/Alert'
 // import e from "@testing-library/user-event/src";
 import FormU from "./FormU";
 import { useHistory } from "react-router-dom";
-const getPath = "http://192.168.0.158:5000/api/v1/user"
+const getPath = "http://192.168.1.37:5000/api/v1/user"
 
 export default function AddComp() {
     //Setting State
@@ -32,7 +32,7 @@ export default function AddComp() {
                 console.log(res.data)
                 if (res.status === 200) {
                     setShow(true)
-                     history.push("/home")
+                    history.push("/home")
                 }
             })
             .catch(err => console.error(err))

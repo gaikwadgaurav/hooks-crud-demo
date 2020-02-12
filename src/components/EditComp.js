@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom"
 export default memo(({ ...props }) => {
 
     //Path Url
-    const updatePath = 'http://192.168.0.158:5000/api/v1/user/';
+    const updatePath = 'http://192.168.0.157:5000/api/v1/user/';
 
     //Duplicate object
     const [data, setData] = useState(props.location.state.list)
@@ -13,8 +13,6 @@ export default memo(({ ...props }) => {
     console.log();
     //History variable
     let history = useHistory();
-
-    
 
     const handleSubmit = (e) => {
         console.log('called')

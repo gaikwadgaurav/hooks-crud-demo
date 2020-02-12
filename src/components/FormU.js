@@ -1,7 +1,7 @@
 import React from "react";
-import {Button, Form} from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
-export default function FormU({data, name, handleChange, handleSubmit}) {
+export default function FormU({ data, name, handleChange, handleSubmit }) {
     return (<div className="container-md">
         <Form onSubmit={handleSubmit}>
             {
@@ -17,15 +17,15 @@ export default function FormU({data, name, handleChange, handleSubmit}) {
                                     onChange={e => handleChange(e)}
                                     value={Object.values(data)[index]}
                                     type="text"
-                                    placeholder={`Enter ${fieldNames}`}/>
+                                    placeholder={`Enter ${fieldNames}`} />
                             </Form.Group>
                         );
                     }
                 })
             }
             <Button className="button"
-                    variant="primary"
-                    type="submit"
+                variant="primary"
+                type="submit"
             >{name}</Button>
         </Form>
     </div>);

@@ -10,11 +10,11 @@ export default memo(({ props }) => {
     let history = useHistory();
 
     //Setting url constant
-    const getID = "http://192.168.0.158:5000/api/v1/user/list";
+    const getID = "http://192.168.0.157:5000/api/v1/user/list";
 
     //Setting State
     const [data, setData] = useState({
-        firstName: '',
+        firstName: '',  
         lastName: '',
         email: '',
         password: ''
@@ -44,13 +44,12 @@ export default memo(({ props }) => {
         )
     })
 
-    console.log('re')
     function Update(list) {
-        history.push(`/user/edit/id=${list._id}`, { list })
+        history.push(`/user/edit?id=${list._id}}`, { list })
     }
 
     //Delete User
-    const deleteUrl = 'http://192.168.0.158:5000/api/v1/user/';
+    const deleteUrl = 'http://192.168.0.157:5000/api/v1/user/';
 
     function remove(id) {
 

@@ -1,6 +1,6 @@
 import React from "react";
-import {Nav} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     return (
@@ -16,7 +16,6 @@ export default function NavBar() {
                 <Link componentclass={Link} href="/user/list" to="/user/list" eventkey="3">List</Link>
             </Nav.Item>
         </Nav>
-
     );
 }
 

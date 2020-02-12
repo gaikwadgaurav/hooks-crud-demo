@@ -1,0 +1,1 @@
+export { postUsers } from './actions/UserAction';
