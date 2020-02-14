@@ -9,6 +9,9 @@ class Search extends Component{
         
     }
     
+    // componentDiUpdate(){
+    //     const clonedUserList = this.props.clonedUserList
+    // }
     render(){
         console.log(this.props)
         const filterSearch = value => (
@@ -25,5 +28,6 @@ class Search extends Component{
 
 const mapStateToProps = state => ({
     userList: state.User.list,
+
 })
 export default connect(mapStateToProps,null)(Search)
